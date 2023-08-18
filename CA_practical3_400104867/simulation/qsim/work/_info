@@ -1,0 +1,161 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\payam\Desktop\CA_practical3_400104867\simulation\qsim
+vFinalCircuit
+Z1 Ib@HNfF^Fd0H9gX`a8g?fC1
+Z2 V:O7^9:7nNJVGAmX2Yh>R]1
+Z3 dC:\Users\payam\Desktop\CA_practical3_400104867\simulation\qsim
+Z4 w1684657622
+Z5 8HW3.vo
+Z6 FHW3.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|HW3.vo|
+Z9 o-work work -O0
+Z10 n@final@circuit
+!i10b 1
+Z11 !s100 ;@0ZASGM=nOXY003L?;>J1
+!s85 0
+Z12 !s108 1684657623.917000
+Z13 !s107 HW3.vo|
+!s101 -O0
+vFinalCircuit_vlg_check_tst
+!i10b 1
+Z14 !s100 2olV1f9gM5zH9fKb:@kQX1
+Z15 IR5kaaGB[TQO61M3ZG8HXK3
+Z16 VoH_=I7aPlJ?<W7a6LDKG<3
+R3
+Z17 w1684657620
+Z18 8Waveform.vwf.vt
+Z19 FWaveform.vwf.vt
+L0 65
+R7
+r1
+!s85 0
+31
+Z20 !s108 1684657624.009000
+Z21 !s107 Waveform.vwf.vt|
+Z22 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R9
+Z23 n@final@circuit_vlg_check_tst
+vFinalCircuit_vlg_sample_tst
+!i10b 1
+Z24 !s100 fl=2[1AM?4aKHe8OU9]FT0
+Z25 ImaL5k[0a>hcb;]Gliz9n]2
+Z26 VbAK1FW<Ln8E=cihVPm>Xi3
+R3
+R17
+R18
+R19
+L0 29
+R7
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R9
+Z27 n@final@circuit_vlg_sample_tst
+vFinalCircuit_vlg_vec_tst
+!i10b 1
+Z28 !s100 Pg9[h1<9:14c]RU:Q`UBA1
+Z29 IL=da4JniDnHFbGD6EHbRc1
+Z30 V2Ci`o52eoT?fekd;<3a`i0
+R3
+R17
+R18
+R19
+Z31 L0 312
+R7
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R9
+Z32 n@final@circuit_vlg_vec_tst
+vtest
+Z33 INC]=1_]QaHQRfn[L8P]YO2
+Z34 V]PnTOi?4oaV>gI75Z38P<3
+R3
+Z35 w1684437059
+R5
+R6
+L0 31
+R7
+r1
+31
+R8
+R9
+Z36 !s100 EoR4BXS<cGH0KHGCk@;N83
+Z37 !s108 1684437060.759000
+R13
+!i10b 1
+!s85 0
+!s101 -O0
+vtest_vlg_check_tst
+Z38 I0?<;]hW73@^>>=ZDgGoDe0
+Z39 V?7?3z_T:a5XPe9NULS5cT2
+R3
+Z40 w1684437057
+Z41 8WaveformTest.vwf.vt
+Z42 FWaveformTest.vwf.vt
+L0 61
+R7
+r1
+31
+Z43 !s108 1684437060.832000
+Z44 !s107 WaveformTest.vwf.vt|
+Z45 !s90 -work|work|WaveformTest.vwf.vt|
+R9
+Z46 !s100 BB@=3b09Jn@9Tzg;NVYRz2
+!i10b 1
+!s85 0
+!s101 -O0
+vtest_vlg_sample_tst
+Z47 ImX>d`QAKohOZT67oK;8G_1
+Z48 Vo]fR<PRE:O4KOzC<I@`B=3
+R3
+R40
+R41
+R42
+L0 29
+R7
+r1
+31
+R43
+R44
+R45
+R9
+Z49 !s100 5hd[MHaIzNeSV2i?IE]4B3
+!i10b 1
+!s85 0
+!s101 -O0
+vtest_vlg_vec_tst
+Z50 I0=SP85e]R0c==5EA2@l>91
+Z51 Va5b;6:2=HDheAU5FQATGI3
+R3
+R40
+R41
+R42
+Z52 L0 156
+R7
+r1
+31
+R43
+R44
+R45
+R9
+Z53 !s100 VgXoez;48EU89dWGZ>44z2
+!i10b 1
+!s85 0
+!s101 -O0

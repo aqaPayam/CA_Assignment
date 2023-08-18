@@ -1,0 +1,510 @@
+|CarrySelectAdder16Bit
+Cout <= Mux:inst38.Y
+A[0] => FA:inst.A
+A[1] => FA:inst2.A
+A[2] => FA:inst3.A
+A[3] => FA:inst5.A
+A[3] => FA:inst7.A
+A[4] => FA:inst4.A
+A[4] => FA:inst8.A
+A[5] => FA:inst6.A
+A[5] => FA:inst9.A
+A[6] => FA:inst26.A
+A[6] => FA:inst27.A
+A[7] => FA:inst16.A
+A[7] => FA:inst19.A
+A[8] => FA:inst17.A
+A[8] => FA:inst20.A
+A[9] => FA:inst18.A
+A[9] => FA:inst21.A
+A[10] => FA:inst44.A
+A[10] => FA:inst45.A
+A[11] => FA:inst42.A
+A[11] => FA:inst43.A
+A[12] => FA:inst39.A
+A[12] => FA:inst40.A
+A[13] => FA:inst29.A
+A[13] => FA:inst32.A
+A[14] => FA:inst30.A
+A[14] => FA:inst33.A
+A[15] => FA:inst31.A
+A[15] => FA:inst34.A
+B[0] => FA:inst.B
+B[1] => FA:inst2.B
+B[2] => FA:inst3.B
+B[3] => FA:inst5.B
+B[3] => FA:inst7.B
+B[4] => FA:inst4.B
+B[4] => FA:inst8.B
+B[5] => FA:inst6.B
+B[5] => FA:inst9.B
+B[6] => FA:inst26.B
+B[6] => FA:inst27.B
+B[7] => FA:inst16.B
+B[7] => FA:inst19.B
+B[8] => FA:inst17.B
+B[8] => FA:inst20.B
+B[9] => FA:inst18.B
+B[9] => FA:inst21.B
+B[10] => FA:inst44.B
+B[10] => FA:inst45.B
+B[11] => FA:inst42.B
+B[11] => FA:inst43.B
+B[12] => FA:inst39.B
+B[12] => FA:inst40.B
+B[13] => FA:inst29.B
+B[13] => FA:inst32.B
+B[14] => FA:inst30.B
+B[14] => FA:inst33.B
+B[15] => FA:inst31.B
+B[15] => FA:inst34.B
+Cin => FA:inst.Cin
+S[0] <= FA:inst.S
+S[1] <= FA:inst2.S
+S[2] <= FA:inst3.S
+S[3] <= Mux:inst12.Y
+S[4] <= Mux:inst13.Y
+S[5] <= Mux:inst14.Y
+S[6] <= Mux:inst15.Y
+S[7] <= Mux:inst22.Y
+S[8] <= Mux:inst23.Y
+S[9] <= Mux:inst24.Y
+S[10] <= Mux:inst47.Y
+S[11] <= Mux:inst46.Y
+S[12] <= Mux:inst41.Y
+S[13] <= Mux:inst37.Y
+S[14] <= Mux:inst36.Y
+S[15] <= Mux:inst35.Y
+
+
+|CarrySelectAdder16Bit|Mux:inst38
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|FA:inst31
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst30
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst29
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst39
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst42
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst44
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst34
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst33
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst32
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst40
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst43
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst45
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|Mux:inst28
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|FA:inst18
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst17
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst16
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst26
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst21
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst20
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst19
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst27
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|Mux:inst25
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|FA:inst6
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst4
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst5
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst9
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst8
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst7
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst3
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst2
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|FA:inst
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CarrySelectAdder16Bit|Mux:inst22
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|Mux:inst41
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|Mux:inst47
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|Mux:inst46
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|Mux:inst37
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|Mux:inst36
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|Mux:inst35
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|Mux:inst14
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|Mux:inst13
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|Mux:inst12
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|Mux:inst24
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|Mux:inst23
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+
+|CarrySelectAdder16Bit|Mux:inst15
+Y <= 5.DB_MAX_OUTPUT_PORT_TYPE
+P0 => 6.IN0
+S => 9.IN0
+P1 => 8.IN0
+
+

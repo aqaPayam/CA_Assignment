@@ -1,0 +1,1042 @@
+|FinalCircuit
+Exp[0] <= CLA4BitAdder:inst4.Sum[0]
+Exp[1] <= CLA4BitAdder:inst4.Sum[1]
+Exp[2] <= CLA4BitAdder:inst4.Sum[2]
+Exp[3] <= CLA4BitAdder:inst4.Sum[3]
+Y[0] => CLA4BitAdder:inst4.A[0]
+Y[1] => CLA4BitAdder:inst4.A[1]
+Y[2] => CLA4BitAdder:inst4.A[2]
+Y[3] => CLA4BitAdder:inst4.A[3]
+X[0] => FindShiftAmount:inst2.A[0]
+X[0] => Shift4BitWidth3:inst.IN[0]
+X[1] => FindShiftAmount:inst2.A[1]
+X[1] => Shift4BitWidth3:inst.IN[1]
+X[2] => FindShiftAmount:inst2.A[2]
+X[2] => Shift4BitWidth3:inst.IN[2]
+X[3] => FindShiftAmount:inst2.A[3]
+X[3] => Shift4BitWidth3:inst.IN[3]
+Fraction[0] <= Shift4BitWidth3:inst.OUT[0]
+Fraction[1] <= Shift4BitWidth3:inst.OUT[1]
+Fraction[2] <= Shift4BitWidth3:inst.OUT[2]
+
+
+|FinalCircuit|CLA4BitAdder:inst4
+Cout <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+A[0] => inst[0].IN0
+A[0] => inst4[0].IN0
+A[1] => inst[1].IN0
+A[1] => inst4[1].IN0
+A[2] => inst[2].IN0
+A[2] => inst4[2].IN0
+A[3] => inst[3].IN0
+A[3] => inst4[3].IN0
+B[0] => inst[0].IN1
+B[0] => inst4[0].IN1
+B[1] => inst[1].IN1
+B[1] => inst4[1].IN1
+B[2] => inst[2].IN1
+B[2] => inst4[2].IN1
+B[3] => inst[3].IN1
+B[3] => inst4[3].IN1
+Cin => inst5.IN0
+Cin => inst6.IN1
+Cin => inst8.IN0
+Cin => inst13.IN0
+Cin => inst18.IN2
+Sum[0] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Sum[1] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+Sum[2] <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+Sum[3] <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|ShiftAmountToExp:inst6
+Out[0] <= BusEncoder:inst1.S[0]
+Out[1] <= BusEncoder:inst1.S[1]
+Out[2] <= BusEncoder:inst1.S[2]
+Out[3] <= BusEncoder:inst1.S[3]
+shift_amount[0] => BusEncoder:inst1.a0
+shift_amount[0] => inst.IN0
+shift_amount[1] => inst.IN1
+shift_amount[2] => ~NO_FANOUT~
+
+
+|FinalCircuit|ShiftAmountToExp:inst6|BusEncoder:inst1
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+
+
+|FinalCircuit|FindShiftAmount:inst2
+Shamt[0] <= BitsAdder:inst9.S[0]
+Shamt[1] <= BitsAdder:inst9.S[1]
+Shamt[2] <= BitsAdder:inst9.S[2]
+A[0] => BusDecoder:inst.INPUT[0]
+A[1] => BusDecoder:inst.INPUT[1]
+A[2] => BusDecoder:inst.INPUT[2]
+A[3] => BusDecoder:inst.INPUT[3]
+
+
+|FinalCircuit|FindShiftAmount:inst2|BItsAdder:inst9
+S[0] <= FA:inst2.S
+S[1] <= FA:inst4.S
+S[2] <= FA:inst4.Cout
+A[0] => FA:inst.A
+A[1] => FA:inst.B
+A[2] => FA:inst.Cin
+A[3] => FA:inst2.A
+
+
+|FinalCircuit|FindShiftAmount:inst2|BItsAdder:inst9|FA:inst4
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|FindShiftAmount:inst2|BItsAdder:inst9|FA:inst
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|FindShiftAmount:inst2|BItsAdder:inst9|FA:inst2
+S <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Cin => inst5.IN0
+Cin => inst6.IN1
+A => inst4.IN0
+A => inst.IN0
+B => inst4.IN1
+B => inst.IN1
+Cout <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|FindShiftAmount:inst2|BusEncoder:inst5
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+
+
+|FinalCircuit|FindShiftAmount:inst2|BusEncoder:inst2
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+
+
+|FinalCircuit|FindShiftAmount:inst2|BusDecoder:inst
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst
+OUT[0] <= S[1].DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= S[2].DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= S[3].DB_MAX_OUTPUT_PORT_TYPE
+shift[0] => Shift1Bit:inst.shift
+shift[1] => Shift2Bit:inst2.shift
+shift[2] => Shift4Bit:inst3.shift
+IN[0] => Convert4To8:inst1.IN[0]
+IN[1] => Convert4To8:inst1.IN[1]
+IN[2] => Convert4To8:inst1.IN[2]
+IN[3] => Convert4To8:inst1.IN[3]
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Convert8To4:inst4
+Out[0] <= BusEncoder:inst1.S[0]
+Out[1] <= BusEncoder:inst1.S[1]
+Out[2] <= BusEncoder:inst1.S[2]
+Out[3] <= BusEncoder:inst1.S[3]
+IN[0] => BusDecoder8:inst.INPUT[0]
+IN[1] => BusDecoder8:inst.INPUT[1]
+IN[2] => BusDecoder8:inst.INPUT[2]
+IN[3] => BusDecoder8:inst.INPUT[3]
+IN[4] => BusDecoder8:inst.INPUT[4]
+IN[5] => BusDecoder8:inst.INPUT[5]
+IN[6] => BusDecoder8:inst.INPUT[6]
+IN[7] => BusDecoder8:inst.INPUT[7]
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Convert8To4:inst4|BusEncoder:inst1
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Convert8To4:inst4|BusDecoder8:inst
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+INPUT[4] => A4.DATAIN
+INPUT[5] => A5.DATAIN
+INPUT[6] => A6.DATAIN
+INPUT[7] => A7.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+A4 <= INPUT[4].DB_MAX_OUTPUT_PORT_TYPE
+A5 <= INPUT[5].DB_MAX_OUTPUT_PORT_TYPE
+A6 <= INPUT[6].DB_MAX_OUTPUT_PORT_TYPE
+A7 <= INPUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Inverse8Bit:inst6
+Out[0] <= BusEncoder8:inst1.S[0]
+Out[1] <= BusEncoder8:inst1.S[1]
+Out[2] <= BusEncoder8:inst1.S[2]
+Out[3] <= BusEncoder8:inst1.S[3]
+Out[4] <= BusEncoder8:inst1.S[4]
+Out[5] <= BusEncoder8:inst1.S[5]
+Out[6] <= BusEncoder8:inst1.S[6]
+Out[7] <= BusEncoder8:inst1.S[7]
+IN[0] => BusDecoder8:inst.INPUT[0]
+IN[1] => BusDecoder8:inst.INPUT[1]
+IN[2] => BusDecoder8:inst.INPUT[2]
+IN[3] => BusDecoder8:inst.INPUT[3]
+IN[4] => BusDecoder8:inst.INPUT[4]
+IN[5] => BusDecoder8:inst.INPUT[5]
+IN[6] => BusDecoder8:inst.INPUT[6]
+IN[7] => BusDecoder8:inst.INPUT[7]
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Inverse8Bit:inst6|BusEncoder8:inst1
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= a4.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= a5.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= a6.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= a7.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+a5 => S[5].DATAIN
+a6 => S[6].DATAIN
+a7 => S[7].DATAIN
+a4 => S[4].DATAIN
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Inverse8Bit:inst6|BusDecoder8:inst
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+INPUT[4] => A4.DATAIN
+INPUT[5] => A5.DATAIN
+INPUT[6] => A6.DATAIN
+INPUT[7] => A7.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+A4 <= INPUT[4].DB_MAX_OUTPUT_PORT_TYPE
+A5 <= INPUT[5].DB_MAX_OUTPUT_PORT_TYPE
+A6 <= INPUT[6].DB_MAX_OUTPUT_PORT_TYPE
+A7 <= INPUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3
+OUT[0] <= BusMux:inst.OUT[0]
+OUT[1] <= BusMux:inst.OUT[1]
+OUT[2] <= BusMux:inst.OUT[2]
+OUT[3] <= BusMux:inst.OUT[3]
+OUT[4] <= BusMux:inst.OUT[4]
+OUT[5] <= BusMux:inst.OUT[5]
+OUT[6] <= BusMux:inst.OUT[6]
+OUT[7] <= BusMux:inst.OUT[7]
+shift => BusMux:inst.S
+IN[0] => BusMux:inst.S0[0]
+IN[0] => BusDecoder8:inst3.INPUT[0]
+IN[1] => BusMux:inst.S0[1]
+IN[1] => BusDecoder8:inst3.INPUT[1]
+IN[2] => BusMux:inst.S0[2]
+IN[2] => BusDecoder8:inst3.INPUT[2]
+IN[3] => BusMux:inst.S0[3]
+IN[3] => BusDecoder8:inst3.INPUT[3]
+IN[4] => BusMux:inst.S0[4]
+IN[4] => BusDecoder8:inst3.INPUT[4]
+IN[5] => BusMux:inst.S0[5]
+IN[5] => BusDecoder8:inst3.INPUT[5]
+IN[6] => BusMux:inst.S0[6]
+IN[6] => BusDecoder8:inst3.INPUT[6]
+IN[7] => BusMux:inst.S0[7]
+IN[7] => BusDecoder8:inst3.INPUT[7]
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusMux:inst
+OUT[0] <= BusEncoder8:inst10.S[0]
+OUT[1] <= BusEncoder8:inst10.S[1]
+OUT[2] <= BusEncoder8:inst10.S[2]
+OUT[3] <= BusEncoder8:inst10.S[3]
+OUT[4] <= BusEncoder8:inst10.S[4]
+OUT[5] <= BusEncoder8:inst10.S[5]
+OUT[6] <= BusEncoder8:inst10.S[6]
+OUT[7] <= BusEncoder8:inst10.S[7]
+S0[0] => BusDecoder8:inst1.INPUT[0]
+S0[1] => BusDecoder8:inst1.INPUT[1]
+S0[2] => BusDecoder8:inst1.INPUT[2]
+S0[3] => BusDecoder8:inst1.INPUT[3]
+S0[4] => BusDecoder8:inst1.INPUT[4]
+S0[5] => BusDecoder8:inst1.INPUT[5]
+S0[6] => BusDecoder8:inst1.INPUT[6]
+S0[7] => BusDecoder8:inst1.INPUT[7]
+S1[0] => BusDecoder8:inst2.INPUT[0]
+S1[1] => BusDecoder8:inst2.INPUT[1]
+S1[2] => BusDecoder8:inst2.INPUT[2]
+S1[3] => BusDecoder8:inst2.INPUT[3]
+S1[4] => BusDecoder8:inst2.INPUT[4]
+S1[5] => BusDecoder8:inst2.INPUT[5]
+S1[6] => BusDecoder8:inst2.INPUT[6]
+S1[7] => BusDecoder8:inst2.INPUT[7]
+S => Bus:inst3.S
+S => Bus:inst.S
+S => Bus:inst4.S
+S => Bus:inst5.S
+S => Bus:inst7.S
+S => Bus:inst6.S
+S => Bus:inst8.S
+S => Bus:inst9.S
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusMux:inst|BusEncoder8:inst10
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= a4.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= a5.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= a6.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= a7.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+a5 => S[5].DATAIN
+a6 => S[6].DATAIN
+a7 => S[7].DATAIN
+a4 => S[4].DATAIN
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusMux:inst|Bus:inst3
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusMux:inst|BusDecoder8:inst1
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+INPUT[4] => A4.DATAIN
+INPUT[5] => A5.DATAIN
+INPUT[6] => A6.DATAIN
+INPUT[7] => A7.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+A4 <= INPUT[4].DB_MAX_OUTPUT_PORT_TYPE
+A5 <= INPUT[5].DB_MAX_OUTPUT_PORT_TYPE
+A6 <= INPUT[6].DB_MAX_OUTPUT_PORT_TYPE
+A7 <= INPUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusMux:inst|BusDecoder8:inst2
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+INPUT[4] => A4.DATAIN
+INPUT[5] => A5.DATAIN
+INPUT[6] => A6.DATAIN
+INPUT[7] => A7.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+A4 <= INPUT[4].DB_MAX_OUTPUT_PORT_TYPE
+A5 <= INPUT[5].DB_MAX_OUTPUT_PORT_TYPE
+A6 <= INPUT[6].DB_MAX_OUTPUT_PORT_TYPE
+A7 <= INPUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusMux:inst|Bus:inst
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusMux:inst|Bus:inst4
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusMux:inst|Bus:inst5
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusMux:inst|Bus:inst7
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusMux:inst|Bus:inst6
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusMux:inst|Bus:inst8
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusMux:inst|Bus:inst9
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusEncoder8:inst4
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= a4.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= a5.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= a6.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= a7.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+a5 => S[5].DATAIN
+a6 => S[6].DATAIN
+a7 => S[7].DATAIN
+a4 => S[4].DATAIN
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift4Bit:inst3|BusDecoder8:inst3
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+INPUT[4] => A4.DATAIN
+INPUT[5] => A5.DATAIN
+INPUT[6] => A6.DATAIN
+INPUT[7] => A7.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+A4 <= INPUT[4].DB_MAX_OUTPUT_PORT_TYPE
+A5 <= INPUT[5].DB_MAX_OUTPUT_PORT_TYPE
+A6 <= INPUT[6].DB_MAX_OUTPUT_PORT_TYPE
+A7 <= INPUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2
+OUT[0] <= BusMux:inst.OUT[0]
+OUT[1] <= BusMux:inst.OUT[1]
+OUT[2] <= BusMux:inst.OUT[2]
+OUT[3] <= BusMux:inst.OUT[3]
+OUT[4] <= BusMux:inst.OUT[4]
+OUT[5] <= BusMux:inst.OUT[5]
+OUT[6] <= BusMux:inst.OUT[6]
+OUT[7] <= BusMux:inst.OUT[7]
+shift => BusMux:inst.S
+IN[0] => BusMux:inst.S0[0]
+IN[0] => BusDecoder8:inst3.INPUT[0]
+IN[1] => BusMux:inst.S0[1]
+IN[1] => BusDecoder8:inst3.INPUT[1]
+IN[2] => BusMux:inst.S0[2]
+IN[2] => BusDecoder8:inst3.INPUT[2]
+IN[3] => BusMux:inst.S0[3]
+IN[3] => BusDecoder8:inst3.INPUT[3]
+IN[4] => BusMux:inst.S0[4]
+IN[4] => BusDecoder8:inst3.INPUT[4]
+IN[5] => BusMux:inst.S0[5]
+IN[5] => BusDecoder8:inst3.INPUT[5]
+IN[6] => BusMux:inst.S0[6]
+IN[6] => BusDecoder8:inst3.INPUT[6]
+IN[7] => BusMux:inst.S0[7]
+IN[7] => BusDecoder8:inst3.INPUT[7]
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusMux:inst
+OUT[0] <= BusEncoder8:inst10.S[0]
+OUT[1] <= BusEncoder8:inst10.S[1]
+OUT[2] <= BusEncoder8:inst10.S[2]
+OUT[3] <= BusEncoder8:inst10.S[3]
+OUT[4] <= BusEncoder8:inst10.S[4]
+OUT[5] <= BusEncoder8:inst10.S[5]
+OUT[6] <= BusEncoder8:inst10.S[6]
+OUT[7] <= BusEncoder8:inst10.S[7]
+S0[0] => BusDecoder8:inst1.INPUT[0]
+S0[1] => BusDecoder8:inst1.INPUT[1]
+S0[2] => BusDecoder8:inst1.INPUT[2]
+S0[3] => BusDecoder8:inst1.INPUT[3]
+S0[4] => BusDecoder8:inst1.INPUT[4]
+S0[5] => BusDecoder8:inst1.INPUT[5]
+S0[6] => BusDecoder8:inst1.INPUT[6]
+S0[7] => BusDecoder8:inst1.INPUT[7]
+S1[0] => BusDecoder8:inst2.INPUT[0]
+S1[1] => BusDecoder8:inst2.INPUT[1]
+S1[2] => BusDecoder8:inst2.INPUT[2]
+S1[3] => BusDecoder8:inst2.INPUT[3]
+S1[4] => BusDecoder8:inst2.INPUT[4]
+S1[5] => BusDecoder8:inst2.INPUT[5]
+S1[6] => BusDecoder8:inst2.INPUT[6]
+S1[7] => BusDecoder8:inst2.INPUT[7]
+S => Bus:inst3.S
+S => Bus:inst.S
+S => Bus:inst4.S
+S => Bus:inst5.S
+S => Bus:inst7.S
+S => Bus:inst6.S
+S => Bus:inst8.S
+S => Bus:inst9.S
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusMux:inst|BusEncoder8:inst10
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= a4.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= a5.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= a6.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= a7.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+a5 => S[5].DATAIN
+a6 => S[6].DATAIN
+a7 => S[7].DATAIN
+a4 => S[4].DATAIN
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusMux:inst|Bus:inst3
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusMux:inst|BusDecoder8:inst1
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+INPUT[4] => A4.DATAIN
+INPUT[5] => A5.DATAIN
+INPUT[6] => A6.DATAIN
+INPUT[7] => A7.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+A4 <= INPUT[4].DB_MAX_OUTPUT_PORT_TYPE
+A5 <= INPUT[5].DB_MAX_OUTPUT_PORT_TYPE
+A6 <= INPUT[6].DB_MAX_OUTPUT_PORT_TYPE
+A7 <= INPUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusMux:inst|BusDecoder8:inst2
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+INPUT[4] => A4.DATAIN
+INPUT[5] => A5.DATAIN
+INPUT[6] => A6.DATAIN
+INPUT[7] => A7.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+A4 <= INPUT[4].DB_MAX_OUTPUT_PORT_TYPE
+A5 <= INPUT[5].DB_MAX_OUTPUT_PORT_TYPE
+A6 <= INPUT[6].DB_MAX_OUTPUT_PORT_TYPE
+A7 <= INPUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusMux:inst|Bus:inst
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusMux:inst|Bus:inst4
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusMux:inst|Bus:inst5
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusMux:inst|Bus:inst7
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusMux:inst|Bus:inst6
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusMux:inst|Bus:inst8
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusMux:inst|Bus:inst9
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusEncoder8:inst4
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= a4.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= a5.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= a6.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= a7.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+a5 => S[5].DATAIN
+a6 => S[6].DATAIN
+a7 => S[7].DATAIN
+a4 => S[4].DATAIN
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift2Bit:inst2|BusDecoder8:inst3
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+INPUT[4] => A4.DATAIN
+INPUT[5] => A5.DATAIN
+INPUT[6] => A6.DATAIN
+INPUT[7] => A7.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+A4 <= INPUT[4].DB_MAX_OUTPUT_PORT_TYPE
+A5 <= INPUT[5].DB_MAX_OUTPUT_PORT_TYPE
+A6 <= INPUT[6].DB_MAX_OUTPUT_PORT_TYPE
+A7 <= INPUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst
+OUT[0] <= BusMux:inst.OUT[0]
+OUT[1] <= BusMux:inst.OUT[1]
+OUT[2] <= BusMux:inst.OUT[2]
+OUT[3] <= BusMux:inst.OUT[3]
+OUT[4] <= BusMux:inst.OUT[4]
+OUT[5] <= BusMux:inst.OUT[5]
+OUT[6] <= BusMux:inst.OUT[6]
+OUT[7] <= BusMux:inst.OUT[7]
+shift => BusMux:inst.S
+IN[0] => BusMux:inst.S0[0]
+IN[0] => BusDecoder8:inst3.INPUT[0]
+IN[1] => BusMux:inst.S0[1]
+IN[1] => BusDecoder8:inst3.INPUT[1]
+IN[2] => BusMux:inst.S0[2]
+IN[2] => BusDecoder8:inst3.INPUT[2]
+IN[3] => BusMux:inst.S0[3]
+IN[3] => BusDecoder8:inst3.INPUT[3]
+IN[4] => BusMux:inst.S0[4]
+IN[4] => BusDecoder8:inst3.INPUT[4]
+IN[5] => BusMux:inst.S0[5]
+IN[5] => BusDecoder8:inst3.INPUT[5]
+IN[6] => BusMux:inst.S0[6]
+IN[6] => BusDecoder8:inst3.INPUT[6]
+IN[7] => BusMux:inst.S0[7]
+IN[7] => BusDecoder8:inst3.INPUT[7]
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusMux:inst
+OUT[0] <= BusEncoder8:inst10.S[0]
+OUT[1] <= BusEncoder8:inst10.S[1]
+OUT[2] <= BusEncoder8:inst10.S[2]
+OUT[3] <= BusEncoder8:inst10.S[3]
+OUT[4] <= BusEncoder8:inst10.S[4]
+OUT[5] <= BusEncoder8:inst10.S[5]
+OUT[6] <= BusEncoder8:inst10.S[6]
+OUT[7] <= BusEncoder8:inst10.S[7]
+S0[0] => BusDecoder8:inst1.INPUT[0]
+S0[1] => BusDecoder8:inst1.INPUT[1]
+S0[2] => BusDecoder8:inst1.INPUT[2]
+S0[3] => BusDecoder8:inst1.INPUT[3]
+S0[4] => BusDecoder8:inst1.INPUT[4]
+S0[5] => BusDecoder8:inst1.INPUT[5]
+S0[6] => BusDecoder8:inst1.INPUT[6]
+S0[7] => BusDecoder8:inst1.INPUT[7]
+S1[0] => BusDecoder8:inst2.INPUT[0]
+S1[1] => BusDecoder8:inst2.INPUT[1]
+S1[2] => BusDecoder8:inst2.INPUT[2]
+S1[3] => BusDecoder8:inst2.INPUT[3]
+S1[4] => BusDecoder8:inst2.INPUT[4]
+S1[5] => BusDecoder8:inst2.INPUT[5]
+S1[6] => BusDecoder8:inst2.INPUT[6]
+S1[7] => BusDecoder8:inst2.INPUT[7]
+S => Bus:inst3.S
+S => Bus:inst.S
+S => Bus:inst4.S
+S => Bus:inst5.S
+S => Bus:inst7.S
+S => Bus:inst6.S
+S => Bus:inst8.S
+S => Bus:inst9.S
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusMux:inst|BusEncoder8:inst10
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= a4.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= a5.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= a6.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= a7.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+a5 => S[5].DATAIN
+a6 => S[6].DATAIN
+a7 => S[7].DATAIN
+a4 => S[4].DATAIN
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusMux:inst|Bus:inst3
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusMux:inst|BusDecoder8:inst1
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+INPUT[4] => A4.DATAIN
+INPUT[5] => A5.DATAIN
+INPUT[6] => A6.DATAIN
+INPUT[7] => A7.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+A4 <= INPUT[4].DB_MAX_OUTPUT_PORT_TYPE
+A5 <= INPUT[5].DB_MAX_OUTPUT_PORT_TYPE
+A6 <= INPUT[6].DB_MAX_OUTPUT_PORT_TYPE
+A7 <= INPUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusMux:inst|BusDecoder8:inst2
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+INPUT[4] => A4.DATAIN
+INPUT[5] => A5.DATAIN
+INPUT[6] => A6.DATAIN
+INPUT[7] => A7.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+A4 <= INPUT[4].DB_MAX_OUTPUT_PORT_TYPE
+A5 <= INPUT[5].DB_MAX_OUTPUT_PORT_TYPE
+A6 <= INPUT[6].DB_MAX_OUTPUT_PORT_TYPE
+A7 <= INPUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusMux:inst|Bus:inst
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusMux:inst|Bus:inst4
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusMux:inst|Bus:inst5
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusMux:inst|Bus:inst7
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusMux:inst|Bus:inst6
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusMux:inst|Bus:inst8
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusMux:inst|Bus:inst9
+OUT <= 5.DB_MAX_OUTPUT_PORT_TYPE
+S0 => 6.IN0
+S => 9.IN0
+S => inst.IN1
+S1 => inst.IN0
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusEncoder8:inst4
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= a4.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= a5.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= a6.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= a7.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+a5 => S[5].DATAIN
+a6 => S[6].DATAIN
+a7 => S[7].DATAIN
+a4 => S[4].DATAIN
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Shift1Bit:inst|BusDecoder8:inst3
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+INPUT[4] => A4.DATAIN
+INPUT[5] => A5.DATAIN
+INPUT[6] => A6.DATAIN
+INPUT[7] => A7.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+A4 <= INPUT[4].DB_MAX_OUTPUT_PORT_TYPE
+A5 <= INPUT[5].DB_MAX_OUTPUT_PORT_TYPE
+A6 <= INPUT[6].DB_MAX_OUTPUT_PORT_TYPE
+A7 <= INPUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Inverse8Bit:inst5
+Out[0] <= BusEncoder8:inst1.S[0]
+Out[1] <= BusEncoder8:inst1.S[1]
+Out[2] <= BusEncoder8:inst1.S[2]
+Out[3] <= BusEncoder8:inst1.S[3]
+Out[4] <= BusEncoder8:inst1.S[4]
+Out[5] <= BusEncoder8:inst1.S[5]
+Out[6] <= BusEncoder8:inst1.S[6]
+Out[7] <= BusEncoder8:inst1.S[7]
+IN[0] => BusDecoder8:inst.INPUT[0]
+IN[1] => BusDecoder8:inst.INPUT[1]
+IN[2] => BusDecoder8:inst.INPUT[2]
+IN[3] => BusDecoder8:inst.INPUT[3]
+IN[4] => BusDecoder8:inst.INPUT[4]
+IN[5] => BusDecoder8:inst.INPUT[5]
+IN[6] => BusDecoder8:inst.INPUT[6]
+IN[7] => BusDecoder8:inst.INPUT[7]
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Inverse8Bit:inst5|BusEncoder8:inst1
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= a4.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= a5.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= a6.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= a7.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+a5 => S[5].DATAIN
+a6 => S[6].DATAIN
+a7 => S[7].DATAIN
+a4 => S[4].DATAIN
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Inverse8Bit:inst5|BusDecoder8:inst
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+INPUT[4] => A4.DATAIN
+INPUT[5] => A5.DATAIN
+INPUT[6] => A6.DATAIN
+INPUT[7] => A7.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+A4 <= INPUT[4].DB_MAX_OUTPUT_PORT_TYPE
+A5 <= INPUT[5].DB_MAX_OUTPUT_PORT_TYPE
+A6 <= INPUT[6].DB_MAX_OUTPUT_PORT_TYPE
+A7 <= INPUT[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Convert4To8:inst1
+Out[0] <= BusEncoder8:inst1.S[0]
+Out[1] <= BusEncoder8:inst1.S[1]
+Out[2] <= BusEncoder8:inst1.S[2]
+Out[3] <= BusEncoder8:inst1.S[3]
+Out[4] <= BusEncoder8:inst1.S[4]
+Out[5] <= BusEncoder8:inst1.S[5]
+Out[6] <= BusEncoder8:inst1.S[6]
+Out[7] <= BusEncoder8:inst1.S[7]
+IN[0] => BusDecoder:inst.INPUT[0]
+IN[1] => BusDecoder:inst.INPUT[1]
+IN[2] => BusDecoder:inst.INPUT[2]
+IN[3] => BusDecoder:inst.INPUT[3]
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Convert4To8:inst1|BusEncoder8:inst1
+S[0] <= a0.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= a1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= a2.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= a3.DB_MAX_OUTPUT_PORT_TYPE
+S[4] <= a4.DB_MAX_OUTPUT_PORT_TYPE
+S[5] <= a5.DB_MAX_OUTPUT_PORT_TYPE
+S[6] <= a6.DB_MAX_OUTPUT_PORT_TYPE
+S[7] <= a7.DB_MAX_OUTPUT_PORT_TYPE
+a0 => S[0].DATAIN
+a1 => S[1].DATAIN
+a2 => S[2].DATAIN
+a3 => S[3].DATAIN
+a5 => S[5].DATAIN
+a6 => S[6].DATAIN
+a7 => S[7].DATAIN
+a4 => S[4].DATAIN
+
+
+|FinalCircuit|Shift4BitWidth3:inst|Convert4To8:inst1|BusDecoder:inst
+A0 <= INPUT[0].DB_MAX_OUTPUT_PORT_TYPE
+INPUT[0] => A0.DATAIN
+INPUT[1] => A1.DATAIN
+INPUT[2] => A2.DATAIN
+INPUT[3] => A3.DATAIN
+A1 <= INPUT[1].DB_MAX_OUTPUT_PORT_TYPE
+A2 <= INPUT[2].DB_MAX_OUTPUT_PORT_TYPE
+A3 <= INPUT[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
